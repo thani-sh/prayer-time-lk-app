@@ -19,7 +19,7 @@
 
         <receiver android:name=".worker.NotificationWorker" android:exported="false">
             <intent-filter>
-                <action android:name="me.thanish.prayers.se.NOTIFY" />
+                <action android:name="me.thanish.prayers.NOTIFY" />
             </intent-filter>
         </receiver>
 

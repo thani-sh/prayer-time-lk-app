@@ -1,10 +1,10 @@
 # Prayer Time
 
-Mobile app to check Islamic prayer times and the Qiblah direciton in Sweden.
+Mobile app to check Islamic prayer times and the Qiblah direciton in Sri Lanka.
 
 ## Contributing
 
-Clone the repository with `git clone https://github.com/thani-sh/prayer-time-se-app.git` and open
+Clone the repository with `git clone https://github.com/thani-sh/prayer-time-lk-app.git` and open
 with Android Studio.
 
 ## Attributions

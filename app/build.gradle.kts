@@ -5,15 +5,15 @@ plugins {
 }
 
 android {
-    namespace = "me.thanish.prayers.se"
+    namespace = "me.thanish.prayers"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "me.thanish.prayers.se"
+        applicationId = "me.thanish.prayers"
         minSdk = 26
         targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 12
+        versionName = "3.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
