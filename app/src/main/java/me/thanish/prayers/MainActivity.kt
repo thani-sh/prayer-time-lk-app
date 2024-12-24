@@ -21,7 +21,6 @@ class MainActivity : ComponentActivity() {
         SchedulerWorker.initialize(applicationContext)
         NotificationWorker.initialize(applicationContext)
 
-
         enableEdgeToEdge()
         setContent {
             PrayersTheme {

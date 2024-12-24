@@ -96,10 +96,10 @@ class NotificationWorker : BroadcastReceiver() {
                 Log.w(TAG, "Cannot schedule exact alarms")
                 return
             }
-            AlarmManagerCompat.setExactAndAllowWhileIdle(
+            AlarmManagerCompat.setAlarmClock(
                 alarmManager,
-                AlarmManager.RTC_WAKEUP,
                 getNotificationTime(prayerTime),
+                alarmIntent,
                 alarmIntent
             )
         }
