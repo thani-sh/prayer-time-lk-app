@@ -1,4 +1,4 @@
-package me.thanish.prayers.ui.theme
+package me.thanish.prayers.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

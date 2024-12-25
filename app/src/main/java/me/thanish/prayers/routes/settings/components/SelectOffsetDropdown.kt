@@ -7,7 +7,6 @@ import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExposedDropdownMenuBox
 import androidx.compose.material3.ExposedDropdownMenuDefaults
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.MenuAnchorType
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -18,17 +17,22 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import me.thanish.prayers.R
+import me.thanish.prayers.domain.NotificationOffset
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SelectMethodologyDropdown(
-    methodology: String,
-    onMethodologyChange: (String) -> Unit
+fun SelectOffsetDropdown(
+    offset: NotificationOffset,
+    onOffsetChange: (NotificationOffset) -> Unit
 ) {
-    val options: List<String> = listOf("Shafi", "Hanafi")
+    val context = LocalContext.current
     var expanded by remember { mutableStateOf(false) }
 
     ExposedDropdownMenuBox(
@@ -39,32 +43,43 @@ fun SelectMethodologyDropdown(
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Text(
-                text = "Methodology",
-                style = MaterialTheme.typography.bodyLarge,
+                text = stringResource(R.string.route_settings_notifications),
+                fontSize = 14.sp,
                 fontWeight = FontWeight.Bold,
+                letterSpacing = 0.5.sp,
                 textAlign = TextAlign.Right,
-                modifier = Modifier.width(120.dp)
+                modifier = Modifier.width(160.dp)
             )
             Spacer(modifier = Modifier.width(20.dp))
             TextButton(
                 onClick = { expanded = true }, modifier = Modifier
-                    .width(120.dp)
+                    .width(160.dp)
                     .menuAnchor(type = MenuAnchorType.PrimaryNotEditable, enabled = true)
             ) {
-                Text(methodology, style = MaterialTheme.typography.bodyLarge)
+                Text(
+                    offset.getLabel(context),
+                    fontSize = 14.sp,
+                    letterSpacing = 0.5.sp,
+                )
                 Spacer(modifier = Modifier.weight(1f))
             }
         }
 
         ExposedDropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
-            options.forEach { option ->
+            NotificationOffset.entries.forEach { option ->
                 DropdownMenuItem(
-                    text = { Text(option, style = MaterialTheme.typography.bodyLarge) },
+                    contentPadding = ExposedDropdownMenuDefaults.ItemContentPadding,
+                    text = {
+                        Text(
+                            option.getLabel(context),
+                            fontSize = 14.sp,
+                            letterSpacing = 0.5.sp,
+                        )
+                    },
                     onClick = {
-                        onMethodologyChange(option)
+                        onOffsetChange(option)
                         expanded = false
                     },
-                    contentPadding = ExposedDropdownMenuDefaults.ItemContentPadding,
                 )
             }
         }

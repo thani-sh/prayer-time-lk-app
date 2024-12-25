@@ -12,39 +12,45 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import me.thanish.prayers.times.PrayerTimes
-
-val labelStyle = TextStyle(
-    fontSize = 14.sp,
-    fontWeight = FontWeight.Bold,
-    letterSpacing = 0.5.sp
-)
-
-val valueStyle = TextStyle(
-    fontSize = 14.sp,
-    fontWeight = FontWeight.Normal,
-    letterSpacing = 0.5.sp
-)
+import me.thanish.prayers.domain.PrayerTimeTable
 
 @Composable
-fun MainRouteContent(times: PrayerTimes) {
-    val items = listOf(
-        Pair("Fajr", times.fajr.time.toLocalTime().toString()),
-        Pair("Sunrise", times.shuruk.time.toLocalTime().toString()),
-        Pair("Dhohr", times.dhohr.time.toLocalTime().toString()),
-        Pair("Asr", times.asr.time.toLocalTime().toString()),
-        Pair("Maghrib", times.maghrib.time.toLocalTime().toString()),
-        Pair("Isha", times.isha.time.toLocalTime().toString())
-    )
+fun MainRouteContent(times: PrayerTimeTable) {
+    val context = LocalContext.current
+    val items = times.toList().map {
+        Pair(it.type.getLabel(context), it.getTimeString())
+    }
+
     Column(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        items.forEach { (label, value) ->
+        items.forEachIndexed { index, (label, value) ->
+            val labelStyle = TextStyle(
+                fontSize = 14.sp,
+                fontWeight = FontWeight.Bold,
+                letterSpacing = 0.5.sp
+            )
+            val valueStyle = TextStyle(
+                fontSize = 14.sp,
+                fontWeight = FontWeight.Normal,
+                letterSpacing = 0.5.sp
+            )
+
+            if (index != 0) {
+                HorizontalDivider(
+                    color = MaterialTheme.colorScheme.primary,
+                    modifier = Modifier
+                        .width(180.dp)
+                        .alpha(0.1f),
+                )
+            }
+
             Row(
                 modifier = Modifier
                     .width(180.dp)
@@ -67,14 +73,6 @@ fun MainRouteContent(times: PrayerTimes) {
                     modifier = Modifier
                         .weight(1f)
                         .padding(horizontal = 12.dp),
-                )
-            }
-            if (label != "Isha") {
-                HorizontalDivider(
-                    color = MaterialTheme.colorScheme.primary,
-                    modifier = Modifier
-                        .width(180.dp)
-                        .alpha(0.1f),
                 )
             }
         }

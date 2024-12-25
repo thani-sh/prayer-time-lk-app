@@ -17,7 +17,7 @@ import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
-import me.thanish.prayers.states.RequestPermission
+import me.thanish.prayers.device.RequestPermission
 
 /**
  * The frequency of location updates in milliseconds.

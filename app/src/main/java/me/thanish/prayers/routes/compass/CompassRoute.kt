@@ -1,7 +1,6 @@
 package me.thanish.prayers.routes.compass
 
 
-import android.content.pm.ActivityInfo
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
@@ -16,21 +15,20 @@ import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import me.thanish.prayers.R
-import me.thanish.prayers.router.RouteSpec
-import me.thanish.prayers.router.RouteType
+import me.thanish.prayers.routes.RouteSpec
+import me.thanish.prayers.routes.RouteType
 import me.thanish.prayers.routes.compass.components.CurrentHeading
 import me.thanish.prayers.routes.compass.components.CurrentLocation
 import me.thanish.prayers.routes.compass.components.CurrentQibla
-import me.thanish.prayers.routes.compass.components.LockScreenOrientation
 import me.thanish.prayers.routes.compass.components.QiblaCompass
-import me.thanish.prayers.ui.theme.PrayersTheme
+import me.thanish.prayers.theme.PrayersTheme
 
 /**
  * Describes the route to use with navigation.
  */
 val CompassRouteSpec = RouteSpec(
     name = "compass",
-    text = "Compass",
+    text = R.string.route_compass_name,
     type = RouteType.PRIMARY,
     icon = {
         Pair(
@@ -64,7 +62,6 @@ fun CompassRouteView(
     heading: Float,
     modifier: Modifier = Modifier
 ) {
-    LockScreenOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
     QiblaCompass(qibla, heading)
 }
 

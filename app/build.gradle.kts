@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "me.thanish.prayers"
-        minSdk = 26
+        minSdk = 33
         targetSdk = 35
         versionCode = 12
         versionName = "3.0"
