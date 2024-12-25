@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Prayers</string>
-    <string name="notification_title">Det är dags för %1$s</string>
+    <string name="notification_title">It\'s time for %1$s</string>
     <string name="notification_channel_title">Prayer time</string>
     <string name="notification_channel_description">Notifies when it\'s time for prayers</string>
     <string name="route_compass_name">Compass</string>
@@ -10,9 +10,6 @@
     <string name="route_settings_method">Method</string>
     <string name="route_settings_notifications">Notifications</string>
     <string name="route_settings_notifications_off">Off</string>
-    <string name="route_settings_notifications_10_min">10 min</string>
-    <string name="route_settings_notifications_15_min">15 min</string>
-    <string name="route_settings_notifications_20_min">20 min</string>
     <string name="prayers_type_fajr">Fajr</string>
     <string name="prayers_type_shuruk">Sunrise</string>
     <string name="prayers_type_dhohr">Dhohr</string>

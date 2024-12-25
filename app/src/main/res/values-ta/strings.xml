@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">தொழுகைகள்</string>
+    <string name="notification_title">%1$s தொழுகைக்கான நேரம்</string>
+    <string name="notification_channel_title">தொழுகை நேரம்</string>
+    <string name="notification_channel_description">தொழுகை நேரம் வரும்போது அறிவிக்கும்</string>
+    <string name="route_compass_name">திசைகாட்டி</string>
+    <string name="route_home_name">தொழுகைகள்</string>
+    <string name="route_settings_name">அமைப்புகள்</string>
+    <string name="route_settings_city">நகரம்</string>
+    <string name="route_settings_method">முறை</string>
+    <string name="route_settings_notifications">அறிவிப்புகள்</string>
+    <string name="route_settings_notifications_off">முடக்கப்பட்டுள்ளது</string>
+    <string name="prayers_type_fajr">ஃபஜ்ர்</string>
+    <string name="prayers_type_shuruk">உதயம்</string>
+    <string name="prayers_type_dhohr">லுஹர்</string>
+    <string name="prayers_type_asr">அஸ்ர்</string>
+    <string name="prayers_type_maghrib">மஃரிப்</string>
+    <string name="prayers_type_isha">இஷா</string>
+    <string name="prayers_method_shafi">ஷாஃபி</string>
+    <string name="prayers_method_hanafi">ஹனஃபி</string>
+    <string name="notification_offset_template">%d நிமி. முன்</string>
+    <string name="notification_offset_disabled">அறிவிக்க வேண்டாம்</string>
+    <string name="route_home_title">தொழுகைகள்</string>
+</resources>

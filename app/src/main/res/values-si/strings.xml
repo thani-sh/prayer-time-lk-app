@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">යාඥාවන්</string>
+    <string name="notification_title">%1$s යාඥාව සඳහා වේලාවයි</string>
+    <string name="notification_channel_title">යාඥා කාලය</string>
+    <string name="notification_channel_description">යාඥා කිරීමට වේලාව පැමිණි විට දැනුම් දෙයි</string>
+    <string name="route_compass_name">මාලිමාව</string>
+    <string name="route_home_name">කාලසටහන</string>
+    <string name="route_settings_name">සැකසීම්</string>
+    <string name="route_settings_city">නගරය</string>
+    <string name="route_settings_method">ක්රමවේදය</string>
+    <string name="route_settings_notifications">දැනුම්දීම්</string>
+    <string name="route_settings_notifications_off">අක්රියයි</string>
+    <string name="prayers_type_fajr">ෆජ්ර්</string>
+    <string name="prayers_type_shuruk">හිරුඋදාව</string>
+    <string name="prayers_type_dhohr">ලුහර්</string>
+    <string name="prayers_type_asr">අසර්</string>
+    <string name="prayers_type_maghrib">මාග්රිබ්</string>
+    <string name="prayers_type_isha">ඉෂා</string>
+    <string name="prayers_method_shafi">ෂාෆි</string>
+    <string name="prayers_method_hanafi">හනෆි</string>
+    <string name="notification_offset_template">මිනිත්තු %dකට පෙර</string>
+    <string name="notification_offset_disabled">දන්වන්න එපා</string>
+    <string name="route_home_title">යාඥා වේලාවන්</string>
+</resources>
