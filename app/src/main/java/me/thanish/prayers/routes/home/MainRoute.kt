@@ -1,12 +1,10 @@
 package me.thanish.prayers.routes.home
 
 
-import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
@@ -66,30 +64,18 @@ fun MainRouteView(
     times: PrayerTimeTable,
     modifier: Modifier = Modifier
 ) {
-    Column(
+    Box(
         modifier = modifier
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
+            .fillMaxSize(),
+        contentAlignment = Alignment.Center
     ) {
-        Spacer(modifier = Modifier.weight(1f))
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.Center
-        ) {
-            Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                MainRouteHeading(times.date)
-            }
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            MainRouteHeading(times.date)
+            Spacer(modifier = Modifier.height(48.dp))
+            MainRouteContent(times)
         }
-        Spacer(modifier = Modifier.height(48.dp))
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.Center
-        ) {
-            Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                MainRouteContent(times)
-            }
-        }
-        Spacer(modifier = Modifier.weight(1f))
     }
 }
 

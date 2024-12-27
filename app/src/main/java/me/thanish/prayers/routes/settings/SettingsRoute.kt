@@ -2,12 +2,9 @@ package me.thanish.prayers.routes.settings
 
 import android.Manifest.permission.POST_NOTIFICATIONS
 import android.Manifest.permission.USE_EXACT_ALARM
-import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -31,7 +28,9 @@ import me.thanish.prayers.domain.PrayerTimeCity
 import me.thanish.prayers.domain.PrayerTimeMethod
 import me.thanish.prayers.routes.RouteSpec
 import me.thanish.prayers.routes.RouteType
-import me.thanish.prayers.routes.settings.components.SettingsRouteContent
+import me.thanish.prayers.routes.settings.components.SelectCityDropdown
+import me.thanish.prayers.routes.settings.components.SelectMethodDropdown
+import me.thanish.prayers.routes.settings.components.SelectOffsetDropdown
 import me.thanish.prayers.theme.PrayersTheme
 import me.thanish.prayers.worker.SchedulerWorker
 
@@ -105,28 +104,18 @@ fun SettingsRouteView(
     onOffsetChange: (NotificationOffset) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    Column(
+    Box(
         modifier = modifier
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
+            .fillMaxSize(),
+        contentAlignment = Alignment.Center
     ) {
-        Spacer(modifier = Modifier.weight(1f))
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.Center
-        ) {
-            Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                SettingsRouteContent(
-                    city,
-                    onCityChange,
-                    method,
-                    onMethodChange,
-                    offset,
-                    onOffsetChange
-                )
-            }
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            SelectCityDropdown(city, onCityChange)
+            SelectMethodDropdown(method, onMethodChange)
+            SelectOffsetDropdown(offset, onOffsetChange)
         }
-        Spacer(modifier = Modifier.weight(1f))
     }
 }
 
@@ -136,16 +125,19 @@ fun SettingsRoutePreview() {
     val city = PrayerTimeCity.colombo
     val method = PrayerTimeMethod.shafi
     val offset = NotificationOffset(10)
+    val onCityChange: (PrayerTimeCity) -> Unit = {}
+    val onMethodChange: (PrayerTimeMethod) -> Unit = {}
+    val onOffsetChange: (NotificationOffset) -> Unit = {}
 
     PrayersTheme {
         Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
             SettingsRouteView(
                 city,
-                {},
+                onCityChange,
                 method,
-                {},
+                onMethodChange,
                 offset,
-                {},
+                onOffsetChange,
                 modifier = Modifier.padding(innerPadding)
             )
         }
