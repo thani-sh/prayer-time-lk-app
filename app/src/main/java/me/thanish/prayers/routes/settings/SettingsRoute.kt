@@ -22,6 +22,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import me.thanish.prayers.R
+import me.thanish.prayers.device.HANAFI_ENABLED
 import me.thanish.prayers.device.RequestPermission
 import me.thanish.prayers.domain.NotificationOffset
 import me.thanish.prayers.domain.PrayerTimeCity
@@ -113,7 +114,9 @@ fun SettingsRouteView(
     ) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             SelectCityDropdown(city, onCityChange)
-            SelectMethodDropdown(method, onMethodChange)
+            if (HANAFI_ENABLED) {
+                SelectMethodDropdown(method, onMethodChange)
+            }
             SelectOffsetDropdown(offset, onOffsetChange)
         }
     }
