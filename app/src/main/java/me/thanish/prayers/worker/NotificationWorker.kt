@@ -1,5 +1,6 @@
 package me.thanish.prayers.worker
 
+import android.annotation.SuppressLint
 import android.app.AlarmManager
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -8,6 +9,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.os.Build
 import android.util.Log
 import androidx.core.app.AlarmManagerCompat
 import androidx.core.app.NotificationCompat
@@ -34,11 +36,11 @@ class NotificationWorker : BroadcastReceiver() {
      * Create a timer notification for a specific prayer time
      */
     private fun doNotify(context: Context, prayerTime: PrayerTime) {
-        if (!NotificationOffset.isEnabled()) {
+        if (!NotificationOffset.isEnabled(context)) {
             Log.i(TAG, "Notifications are disabled")
             return
         }
-        if (PrayerTimeCity.get() != prayerTime.city) {
+        if (PrayerTimeCity.get(context) != prayerTime.city) {
             Log.i(TAG, "Notifications are for a different city")
             return
         }
@@ -76,6 +78,7 @@ class NotificationWorker : BroadcastReceiver() {
         /**
          * Initialize the notification channel for prayer time notifications.
          */
+        @SuppressLint("UnspecifiedRegisterReceiverFlag")
         fun initialize(context: Context) {
             // Create the notification channel
             val manager = context.getSystemService(NotificationManager::class.java)
@@ -86,12 +89,22 @@ class NotificationWorker : BroadcastReceiver() {
             }
             // Create the notification channel
             manager.createNotificationChannel(channel)
+
             // Register the notification worker to receive broadcasts
-            context.registerReceiver(
-                NotificationWorker(),
-                IntentFilter(ACTION),
-                Context.RECEIVER_NOT_EXPORTED
-            )
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                // Android 13 introduced flags to be used with Context.registerReceiver
+                context.registerReceiver(
+                    NotificationWorker(),
+                    IntentFilter(ACTION),
+                    Context.RECEIVER_NOT_EXPORTED
+                )
+            } else {
+                // Older versions of Android do not support Context.RECEIVER_NOT_EXPORTED
+                context.registerReceiver(
+                    NotificationWorker(),
+                    IntentFilter(ACTION)
+                )
+            }
         }
 
         /**
@@ -107,7 +120,7 @@ class NotificationWorker : BroadcastReceiver() {
             }
             AlarmManagerCompat.setAlarmClock(
                 alarmManager,
-                getNotificationTime(prayerTime),
+                getNotificationTime(context, prayerTime),
                 alarmIntent,
                 alarmIntent
             )
@@ -132,8 +145,8 @@ class NotificationWorker : BroadcastReceiver() {
         /**
          * Helper function to get the timeout for the notification worker.
          */
-        private fun getNotificationTime(prayerTime: PrayerTime): Long {
-            val timestamp = prayerTime.getEpochMilli() - NotificationOffset.get().getMilli()
+        private fun getNotificationTime(context: Context, prayerTime: PrayerTime): Long {
+            val timestamp = prayerTime.getEpochMilli() - NotificationOffset.get(context).getMilli()
             if (timestamp < System.currentTimeMillis()) {
                 return System.currentTimeMillis() + 1000 * 5
             }

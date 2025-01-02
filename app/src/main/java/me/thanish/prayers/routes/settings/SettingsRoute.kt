@@ -1,7 +1,9 @@
 package me.thanish.prayers.routes.settings
 
 import android.Manifest.permission.POST_NOTIFICATIONS
+import android.Manifest.permission.SCHEDULE_EXACT_ALARM
 import android.Manifest.permission.USE_EXACT_ALARM
+import android.os.Build
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -19,6 +21,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import me.thanish.prayers.R
@@ -48,40 +51,51 @@ val SettingsRouteSpec = RouteSpec(
 
 @Composable
 fun SettingsRoute(nav: NavController, modifier: Modifier = Modifier) {
-    var city by remember { mutableStateOf(PrayerTimeCity.get()) }
-    var method by remember { mutableStateOf(PrayerTimeMethod.get()) }
-    var offset by remember { mutableStateOf(NotificationOffset.get()) }
+    val context = LocalContext.current
+    var city by remember { mutableStateOf(PrayerTimeCity.get(context)) }
+    var method by remember { mutableStateOf(PrayerTimeMethod.get(context)) }
+    var offset by remember { mutableStateOf(NotificationOffset.get(context)) }
 
     val onCityChange = { selectedCity: PrayerTimeCity ->
         city = selectedCity
-        PrayerTimeCity.set(selectedCity)
-        if (NotificationOffset.isEnabled()) {
+        PrayerTimeCity.set(context, selectedCity)
+        if (NotificationOffset.isEnabled(context)) {
             SchedulerWorker.schedule(nav.context, city)
         }
     }
 
     val onMethodChange = { selectedMethod: PrayerTimeMethod ->
         method = selectedMethod
-        PrayerTimeMethod.set(selectedMethod)
-        if (NotificationOffset.isEnabled()) {
+        PrayerTimeMethod.set(context, selectedMethod)
+        if (NotificationOffset.isEnabled(context)) {
             SchedulerWorker.schedule(nav.context, city)
         }
     }
 
     val onOffsetChange = { selectedOffset: NotificationOffset ->
         offset = selectedOffset
-        NotificationOffset.set(selectedOffset)
-        if (NotificationOffset.isEnabled()) {
+        NotificationOffset.set(context, selectedOffset)
+        if (NotificationOffset.isEnabled(context)) {
             SchedulerWorker.schedule(nav.context, city)
         }
     }
 
-    if (NotificationOffset.isEnabled()) {
-        RequestPermission(
-            requestedPermissions = arrayOf(POST_NOTIFICATIONS, USE_EXACT_ALARM),
-            handleSuccess = { },
-            handleFailure = { }
-        )
+    if (NotificationOffset.isEnabled(context)) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            RequestPermission(
+                requestedPermissions = arrayOf(POST_NOTIFICATIONS, USE_EXACT_ALARM),
+                handleSuccess = { },
+                handleFailure = { }
+            )
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            RequestPermission(
+                requestedPermissions = arrayOf(SCHEDULE_EXACT_ALARM),
+                handleSuccess = { },
+                handleFailure = { }
+            )
+        } else {
+            // No permissions needed for notifications and alarms on older versions
+        }
     }
 
     SettingsRouteView(

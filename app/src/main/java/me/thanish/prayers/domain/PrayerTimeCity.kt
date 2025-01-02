@@ -1,7 +1,7 @@
 package me.thanish.prayers.domain
 
 import android.content.Context
-import com.tencent.mmkv.MMKV
+import androidx.datastore.preferences.core.intPreferencesKey
 import me.thanish.prayers.R
 
 /**
@@ -25,25 +25,21 @@ enum class PrayerTimeCity(private val key: Int) {
         /**
          * STORE_KEY is the MMKV key for storing the current prayer city.
          */
-        private const val STORE_KEY = "PrayerTimeCity"
+        private val STORE_KEY = intPreferencesKey("PrayerTimeCity")
 
-        /**
-         * store is the MMKV instance for storing the current prayer city.
-         */
-        private val store = MMKV.defaultMMKV();
 
         /**
          * set sets the current prayer city.
          */
-        fun set(city: PrayerTimeCity) {
-            store.putInt(STORE_KEY, city.ordinal)
+        fun set(context: Context, city: PrayerTimeCity) {
+            setIntegerSync(context, STORE_KEY, city.ordinal)
         }
 
         /**
          * get returns the current prayer city.
          */
-        fun get(): PrayerTimeCity {
-            val index = store.getInt(STORE_KEY, colombo.ordinal)
+        fun get(context: Context): PrayerTimeCity {
+            val index = getIntegerSync(context, STORE_KEY, colombo.ordinal)
             return entries[index]
         }
     }

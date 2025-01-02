@@ -12,7 +12,7 @@
     <string name="route_settings_notifications_off">Off</string>
     <string name="prayers_type_fajr">Fajr</string>
     <string name="prayers_type_shuruk">Sunrise</string>
-    <string name="prayers_type_dhohr">Dhohr</string>
+    <string name="prayers_type_dhohr">Dhuhr</string>
     <string name="prayers_type_asr">Asr</string>
     <string name="prayers_type_maghrib">Maghrib</string>
     <string name="prayers_type_isha">Isha</string>
