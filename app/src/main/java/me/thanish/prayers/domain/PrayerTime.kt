@@ -50,10 +50,30 @@ data class PrayerTime(
     }
 
     /**
+     * isCurrentPrayer returns true if the prayer time is the current prayer time.
+     */
+    fun isCurrentPrayer(): Boolean {
+        val now = LocalDateTime.now()
+        return now > time && now.plusSeconds(ACTIVE_DURATION_SECONDS) < time
+    }
+
+    /**
+     * isNextPrayer returns true if the prayer time is the next prayer time.
+     */
+    fun isNextPrayer(context: Context): Boolean {
+        return getNext(context, city, 1).firstOrNull() == this
+    }
+
+    /**
      * ✄ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
      */
 
     companion object {
+        /**
+         * ACTIVE_DURATION_SECONDS is the duration to consider a prayer as current.
+         */
+        const val ACTIVE_DURATION_SECONDS: Long = 30 * 60
+
         /**
          * fromStringId creates a prayer time from a string id.
          */
