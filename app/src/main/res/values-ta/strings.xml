@@ -21,4 +21,6 @@
     <string name="notification_offset_template">%d நிமி. முன்</string>
     <string name="notification_offset_disabled">அறிவிக்க வேண்டாம்</string>
     <string name="route_home_title">தொழுகைகள்</string>
+    <string name="route_developer_name">Developer</string>
+    <string name="route_developer_test_notification">Test Notification</string>
 </resources>

@@ -1,6 +1,5 @@
 package me.thanish.prayers.worker
 
-import android.annotation.SuppressLint
 import android.app.AlarmManager
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -8,8 +7,6 @@ import android.app.PendingIntent
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import android.content.IntentFilter
-import android.os.Build
 import android.util.Log
 import androidx.core.app.AlarmManagerCompat
 import androidx.core.app.NotificationCompat
@@ -17,6 +14,8 @@ import me.thanish.prayers.R
 import me.thanish.prayers.domain.NotificationOffset
 import me.thanish.prayers.domain.PrayerTime
 import me.thanish.prayers.domain.PrayerTimeCity
+import me.thanish.prayers.domain.PrayerTimeType
+import java.time.LocalDateTime
 
 /**
  * Worker to show a notification approximately 10 minutes before a prayer time
@@ -78,7 +77,6 @@ class NotificationWorker : BroadcastReceiver() {
         /**
          * Initialize the notification channel for prayer time notifications.
          */
-        @SuppressLint("UnspecifiedRegisterReceiverFlag")
         fun initialize(context: Context) {
             // Create the notification channel
             val manager = context.getSystemService(NotificationManager::class.java)
@@ -89,22 +87,6 @@ class NotificationWorker : BroadcastReceiver() {
             }
             // Create the notification channel
             manager.createNotificationChannel(channel)
-
-            // Register the notification worker to receive broadcasts
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                // Android 13 introduced flags to be used with Context.registerReceiver
-                context.registerReceiver(
-                    NotificationWorker(),
-                    IntentFilter(ACTION),
-                    Context.RECEIVER_NOT_EXPORTED
-                )
-            } else {
-                // Older versions of Android do not support Context.RECEIVER_NOT_EXPORTED
-                context.registerReceiver(
-                    NotificationWorker(),
-                    IntentFilter(ACTION)
-                )
-            }
         }
 
         /**
@@ -124,6 +106,20 @@ class NotificationWorker : BroadcastReceiver() {
                 alarmIntent,
                 alarmIntent
             )
+        }
+
+        /**
+         * Schedule a test notification for a testing prayer time.
+         * Only used for testing scheduling notifications.
+         */
+        fun scheduleTestNotification(context: Context, delay: Long) {
+            Log.i(TAG, "Scheduling test notification with a $delay seconds delay")
+            val testPrayerTime = PrayerTime(
+                city = PrayerTimeCity.get(context),
+                type = PrayerTimeType.asr,
+                time = LocalDateTime.now().plusSeconds(delay)
+            )
+            schedule(context, testPrayerTime)
         }
 
         /**

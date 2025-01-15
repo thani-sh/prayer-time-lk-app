@@ -21,4 +21,6 @@
     <string name="notification_offset_template">Before %d minutes</string>
     <string name="notification_offset_disabled">Do not notify</string>
     <string name="route_home_title">Prayer Times</string>
+    <string name="route_developer_name">Developer</string>
+    <string name="route_developer_test_notification">Test Notification</string>
 </resources>

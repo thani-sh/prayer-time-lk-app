@@ -6,7 +6,9 @@ import android.Manifest.permission.USE_EXACT_ALARM
 import android.os.Build
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -23,6 +25,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import me.thanish.prayers.R
 import me.thanish.prayers.device.HANAFI_ENABLED
@@ -32,6 +35,7 @@ import me.thanish.prayers.domain.PrayerTimeCity
 import me.thanish.prayers.domain.PrayerTimeMethod
 import me.thanish.prayers.routes.RouteSpec
 import me.thanish.prayers.routes.RouteType
+import me.thanish.prayers.routes.settings.components.GotoDeveloperButton
 import me.thanish.prayers.routes.settings.components.SelectCityDropdown
 import me.thanish.prayers.routes.settings.components.SelectMethodDropdown
 import me.thanish.prayers.routes.settings.components.SelectOffsetDropdown
@@ -44,7 +48,7 @@ import me.thanish.prayers.worker.SchedulerWorker
 val SettingsRouteSpec = RouteSpec(
     name = "settings",
     text = R.string.route_settings_name,
-    type = RouteType.SECONDARY,
+    type = RouteType.PRIMARY,
     icon = { Pair(Icons.Filled.Settings, Icons.Outlined.Settings) },
     content = { nav: NavController, modifier: Modifier -> SettingsRoute(nav, modifier) }
 )
@@ -80,6 +84,10 @@ fun SettingsRoute(nav: NavController, modifier: Modifier = Modifier) {
         }
     }
 
+    val onGotoDeveloper = {
+        nav.navigate("developer")
+    }
+
     if (NotificationOffset.isEnabled(context)) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             RequestPermission(
@@ -105,6 +113,7 @@ fun SettingsRoute(nav: NavController, modifier: Modifier = Modifier) {
         onMethodChange,
         offset,
         onOffsetChange,
+        onGotoDeveloper,
         modifier
     )
 }
@@ -117,21 +126,25 @@ fun SettingsRouteView(
     onMethodChange: (PrayerTimeMethod) -> Unit,
     offset: NotificationOffset,
     onOffsetChange: (NotificationOffset) -> Unit,
+    onGotoDeveloper: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Box(
         modifier = modifier
             .fillMaxSize()
-            .verticalScroll(rememberScrollState())
-            .fillMaxSize(),
+            .verticalScroll(rememberScrollState()),
         contentAlignment = Alignment.Center
     ) {
-        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+        ) {
             SelectCityDropdown(city, onCityChange)
             if (HANAFI_ENABLED) {
                 SelectMethodDropdown(method, onMethodChange)
             }
             SelectOffsetDropdown(offset, onOffsetChange)
+            Spacer(Modifier.height(60.dp))
+            GotoDeveloperButton(onGotoDeveloper)
         }
     }
 }
@@ -145,6 +158,7 @@ fun SettingsRoutePreview() {
     val onCityChange: (PrayerTimeCity) -> Unit = {}
     val onMethodChange: (PrayerTimeMethod) -> Unit = {}
     val onOffsetChange: (NotificationOffset) -> Unit = {}
+    val onGotoDeveloper: () -> Unit = {}
 
     PrayersTheme {
         Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
@@ -155,6 +169,7 @@ fun SettingsRoutePreview() {
                 onMethodChange,
                 offset,
                 onOffsetChange,
+                onGotoDeveloper,
                 modifier = Modifier.padding(innerPadding)
             )
         }

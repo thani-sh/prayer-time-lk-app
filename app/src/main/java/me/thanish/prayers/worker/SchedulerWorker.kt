@@ -65,9 +65,9 @@ class SchedulerWorker(context: Context, workerParams: WorkerParameters) :
                 return
             }
             Log.i(TAG, "Scheduling notifications for next $PRAYERS_TO_SCHEDULE prayers")
-            PrayerTime.getNext(context, city, PRAYERS_TO_SCHEDULE).forEach { t ->
-                NotificationWorker.schedule(context, t)
-            }
+            PrayerTime.getNext(context, city, PRAYERS_TO_SCHEDULE)
+                .filter { t -> t.type.shouldNotify() }
+                .forEach { t -> NotificationWorker.schedule(context, t) }
         }
     }
 }

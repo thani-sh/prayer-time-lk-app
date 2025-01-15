@@ -21,4 +21,6 @@
     <string name="notification_offset_template">මිනිත්තු %dකට පෙර</string>
     <string name="notification_offset_disabled">දන්වන්න එපා</string>
     <string name="route_home_title">යාඥා වේලාවන්</string>
+    <string name="route_developer_name">දෝෂහරණ</string>
+    <string name="route_developer_test_notification">Test Notification</string>
 </resources>
