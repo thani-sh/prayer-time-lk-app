@@ -69,10 +69,6 @@ class NotificationWorker : BroadcastReceiver() {
         private const val CH_ID = "prayer_time"
         private const val INPUT_PRAYER_TIME_ID = "prayerTimeId"
 
-        /**
-         * Notification visible duration in milliseconds after the prayer time.
-         */
-        private const val NOTIFICATION_EXPIRE_MS = 1000 * 60 * 5
 
         /**
          * Initialize the notification channel for prayer time notifications.
@@ -156,10 +152,10 @@ class NotificationWorker : BroadcastReceiver() {
         private fun getNotificationExpireTime(prayerTime: PrayerTime): Long {
             val prayerTimestamp = prayerTime.getEpochMilli()
             val currentTimestamp = System.currentTimeMillis()
-            if (prayerTimestamp + NOTIFICATION_EXPIRE_MS <= currentTimestamp) {
+            if (prayerTimestamp <= currentTimestamp) {
                 return 0
             }
-            return prayerTimestamp + NOTIFICATION_EXPIRE_MS - currentTimestamp
+            return prayerTimestamp - currentTimestamp
         }
     }
 }
