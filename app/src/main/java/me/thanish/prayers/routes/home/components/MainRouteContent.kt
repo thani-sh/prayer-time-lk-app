@@ -83,9 +83,7 @@ fun MainRouteContent(
                 }
 
                 Row(
-                    modifier = Modifier
-                        .width(180.dp)
-                        .padding(vertical = 18.dp),
+                    modifier = Modifier.padding(vertical = 18.dp),
                     horizontalArrangement = Arrangement.Center,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
