@@ -22,5 +22,7 @@
     <string name="notification_offset_disabled">දන්වන්න එපා</string>
     <string name="route_home_title">යාඥා වේලාවන්</string>
     <string name="route_developer_name">දෝෂහරණ</string>
-    <string name="route_developer_test_notification">Test Notification</string>
+    <string name="route_developer_test_notification">දැනුම්දීම අත්හදා බලන්න</string>
+    <string name="next_prayer_widget_name">මීළඟ යාඥා</string>
+    <string name="next_prayer_widget_title">මීළඟ යාඥා වේලාව</string>
 </resources>

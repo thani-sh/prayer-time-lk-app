@@ -21,6 +21,8 @@
     <string name="notification_offset_template">%d நிமி. முன்</string>
     <string name="notification_offset_disabled">அறிவிக்க வேண்டாம்</string>
     <string name="route_home_title">தொழுகைகள்</string>
-    <string name="route_developer_name">Developer</string>
-    <string name="route_developer_test_notification">Test Notification</string>
+    <string name="route_developer_name">உருவாக்கம்</string>
+    <string name="route_developer_test_notification">அறிவிப்பை பரிசோதனை</string>
+    <string name="next_prayer_widget_name">அடுத்த தொழுகை</string>
+    <string name="next_prayer_widget_title">அடுத்த தொழுகை நேரம்</string>
 </resources>
