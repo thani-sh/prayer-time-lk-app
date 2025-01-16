@@ -47,20 +47,20 @@ class Widget : GlanceAppWidget() {
             verticalAlignment = Alignment.CenterVertically,
             modifier = GlanceModifier
                 .fillMaxSize()
-                .background(GlanceTheme.colors.background)
+                .background(GlanceTheme.colors.surface)
                 .padding(8.dp)
         ) {
             Text(
                 text = context.getString(R.string.next_prayer_widget_name),
-                style = TextStyle(fontWeight = FontWeight.Bold, fontSize = 8.sp)
+                style = TextStyle(fontWeight = FontWeight.Bold, fontSize = 8.sp, color = GlanceTheme.colors.onSurface)
             )
             Text(
                 text = time.getTimeString(),
-                style = TextStyle(fontSize = 16.sp)
+                style = TextStyle(fontSize = 16.sp, color = GlanceTheme.colors.onSurface)
             )
             Text(
                 text = time.type.getLabel(context),
-                style = TextStyle(fontSize = 12.sp)
+                style = TextStyle(fontSize = 12.sp, color = GlanceTheme.colors.onSurface)
             )
         }
     }
