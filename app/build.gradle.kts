@@ -12,8 +12,8 @@ android {
         applicationId = "me.thanish.prayers"
         minSdk = 26
         targetSdk = 35
-        versionCode = 18
-        versionName = "3.6"
+        versionCode = 19
+        versionName = "3.7"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
