@@ -1,6 +1,7 @@
 package me.thanish.prayers.domain
 
 import android.content.Context
+import me.thanish.prayers.R
 import java.time.LocalDateTime
 import java.time.ZoneId
 
@@ -53,15 +54,15 @@ data class PrayerTime(
      * getUntilString returns the time string for the prayer time from system time.
      * Eg: "in 32min", "in 1h 20min", etc.
      */
-    fun getUntilString(): String {
+    fun getUntilString(context: Context): String {
         val now = LocalDateTime.now()
         val duration = java.time.Duration.between(now, time).seconds
         val m = (duration / 60) % 60
         val h = duration / (60 * 60)
         if (h > 0) {
-            return "in ${h}h, ${m}min"
+            return context.resources.getString(R.string.prayers_time_until_hm, h, m)
         }
-        return "in ${m}min"
+        return context.resources.getString(R.string.prayers_time_until_m, m)
     }
 
     /**

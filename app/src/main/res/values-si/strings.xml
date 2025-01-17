@@ -25,4 +25,7 @@
     <string name="route_developer_test_notification">දැනුම්දීම අත්හදා බලන්න</string>
     <string name="next_prayer_widget_name">මීළඟ යාඥා</string>
     <string name="next_prayer_widget_title">මීළඟ යාඥා වේලාව</string>
+    <string name="next_prayer_widget_refresh">නැවුම් කරන්න</string>
+    <string name="prayers_time_until_hm">පැය %dයි විනාඩි %dයි</string>
+    <string name="prayers_time_until_m">%d மணி, %d நிமிடங்கள்</string>
 </resources>

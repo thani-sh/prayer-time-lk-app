@@ -3,7 +3,7 @@
     android:minHeight="56dp"
     android:targetCellWidth="1"
     android:targetCellHeight="1"
-    android:updatePeriodMillis="1800000"
+    android:updatePeriodMillis="1000"
     android:description="@string/next_prayer_widget_name"
     android:initialLayout="@layout/glance_default_loading_layout"
     android:resizeMode="none"

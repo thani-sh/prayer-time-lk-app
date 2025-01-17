@@ -21,7 +21,7 @@ class NextPrayerTimeStore(
             return flow {
                 while (true) {
                     val city = PrayerTimeCity.get(context)
-                    emit(PrayerTime.getNextPrayer(context, PrayerTimeCity.get(context)))
+                    emit(PrayerTime.getNextPrayer(context, city))
                     delay(interval)
                 }
             }

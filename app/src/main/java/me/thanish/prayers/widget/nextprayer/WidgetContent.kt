@@ -11,12 +11,16 @@ import androidx.glance.layout.Alignment
 import androidx.glance.layout.Column
 import androidx.glance.layout.Spacer
 import androidx.glance.layout.fillMaxSize
+import androidx.glance.layout.fillMaxWidth
+import androidx.glance.layout.height
 import androidx.glance.layout.padding
 import androidx.glance.preview.ExperimentalGlancePreviewApi
 import androidx.glance.preview.Preview
 import androidx.glance.text.FontWeight
 import androidx.glance.text.Text
 import androidx.glance.text.TextStyle
+import androidx.glance.unit.ColorProvider
+import me.thanish.prayers.R
 import me.thanish.prayers.domain.PrayerTime
 import me.thanish.prayers.domain.PrayerTimeCity
 import me.thanish.prayers.domain.PrayerTimeTable
@@ -24,16 +28,21 @@ import me.thanish.prayers.domain.PrayerTimeTable
 @Composable
 fun WidgetContent(prayerTime: PrayerTime) {
     val context = LocalContext.current
+    val dimmedColor = GlanceTheme.colors.secondary
+        .getColor(LocalContext.current)
+        .copy(alpha = 0.5f)
 
     Column(
         modifier = GlanceModifier
             .fillMaxSize()
             .background(GlanceTheme.colors.surface)
-            .padding(12.dp)
+            .padding(8.dp)
     ) {
         Spacer(GlanceModifier.defaultWeight())
         Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
             verticalAlignment = Alignment.CenterVertically,
+            modifier = GlanceModifier.fillMaxWidth()
         ) {
             Text(
                 text = prayerTime.type.getLabel(context),
@@ -51,11 +60,18 @@ fun WidgetContent(prayerTime: PrayerTime) {
                 )
             )
             Text(
-                text = prayerTime.getUntilString(),
+                text = prayerTime.getUntilString(context),
                 style = TextStyle(
-                    fontWeight = FontWeight.Medium,
-                    fontSize = 10.sp,
+                    fontSize = 8.sp,
                     color = GlanceTheme.colors.onSurface
+                ),
+            )
+            Spacer(GlanceModifier.height(8.dp))
+            Text(
+                text = "( ${context.getString(R.string.next_prayer_widget_refresh)} )",
+                style = TextStyle(
+                    fontSize = 8.sp,
+                    color = ColorProvider(dimmedColor)
                 ),
             )
         }
