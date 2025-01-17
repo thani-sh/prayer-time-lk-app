@@ -24,5 +24,5 @@
     <string name="route_developer_name">Developer</string>
     <string name="route_developer_test_notification">Test Notification</string>
     <string name="next_prayer_widget_name">Next Prayer</string>
-    <string name="next_prayer_widget_title">Next Prayer Time</string>
+    <string name="next_prayer_widget_title">Next prayer time</string>
 </resources>

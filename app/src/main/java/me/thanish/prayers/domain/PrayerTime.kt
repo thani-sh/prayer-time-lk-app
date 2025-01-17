@@ -50,6 +50,21 @@ data class PrayerTime(
     }
 
     /**
+     * getUntilString returns the time string for the prayer time from system time.
+     * Eg: "in 32min", "in 1h 20min", etc.
+     */
+    fun getUntilString(): String {
+        val now = LocalDateTime.now()
+        val duration = java.time.Duration.between(now, time).seconds
+        val m = (duration / 60) % 60
+        val h = duration / (60 * 60)
+        if (h > 0) {
+            return "in ${h}h, ${m}min"
+        }
+        return "in ${m}min"
+    }
+
+    /**
      * isCurrentPrayer returns true if the prayer time is the current prayer time.
      */
     fun isCurrentPrayer(): Boolean {
@@ -86,6 +101,16 @@ data class PrayerTime(
             val type = PrayerTimeType.valueOf(parts[1])
             val time = LocalDateTime.parse(parts[2])
             return PrayerTime(city, type, time)
+        }
+
+
+        /**
+         * getNextPrayer returns the next prayer time
+         */
+        fun getNextPrayer(context: Context, city: PrayerTimeCity): PrayerTime {
+            val item = getNext(context, city, 1).firstOrNull()
+                ?: throw Exception("No prayer times found for $city")
+            return item
         }
 
         /**

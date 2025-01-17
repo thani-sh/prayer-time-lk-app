@@ -47,5 +47,12 @@ data class PrayerTimeTable(
                 PrayerTime(city, PrayerTimeType.isha, data.getIsha(date)),
             )
         }
+
+        /**
+         * forToday creates a prayer time table for today.
+         */
+        fun forToday(context: Context, city: PrayerTimeCity): PrayerTimeTable {
+            return forDate(context, city, LocalDate.now())
+        }
     }
 }
