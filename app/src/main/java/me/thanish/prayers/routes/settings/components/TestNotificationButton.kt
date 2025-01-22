@@ -1,4 +1,4 @@
-package me.thanish.prayers.routes.developer.components
+package me.thanish.prayers.routes.settings.components
 
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -16,7 +16,7 @@ fun TestNotificationButton(
         onClick = { onTestNotification(60) },
     ) {
         Text(
-            text = stringResource(R.string.route_developer_test_notification),
+            text = stringResource(R.string.route_settings_test_notification),
             fontSize = 14.sp,
             letterSpacing = 0.5.sp,
         )

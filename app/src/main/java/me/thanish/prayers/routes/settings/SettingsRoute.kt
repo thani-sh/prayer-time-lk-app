@@ -4,42 +4,46 @@ import android.Manifest.permission.POST_NOTIFICATIONS
 import android.Manifest.permission.SCHEDULE_EXACT_ALARM
 import android.Manifest.permission.USE_EXACT_ALARM
 import android.os.Build
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.outlined.Settings
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import me.thanish.prayers.R
-import me.thanish.prayers.device.HANAFI_ENABLED
+import me.thanish.prayers.device.DEBUG_ENABLED
 import me.thanish.prayers.device.RequestPermission
 import me.thanish.prayers.domain.NotificationOffset
 import me.thanish.prayers.domain.PrayerTimeCity
 import me.thanish.prayers.domain.PrayerTimeMethod
 import me.thanish.prayers.routes.RouteSpec
 import me.thanish.prayers.routes.RouteType
-import me.thanish.prayers.routes.settings.components.GotoDeveloperButton
 import me.thanish.prayers.routes.settings.components.SelectCityDropdown
 import me.thanish.prayers.routes.settings.components.SelectMethodDropdown
 import me.thanish.prayers.routes.settings.components.SelectOffsetDropdown
+import me.thanish.prayers.routes.settings.components.SettingsSectionWithTitle
+import me.thanish.prayers.routes.settings.components.TestNotificationButton
 import me.thanish.prayers.theme.PrayersTheme
+import me.thanish.prayers.worker.NotificationWorker
 import me.thanish.prayers.worker.SchedulerWorker
 
 /**
@@ -84,8 +88,8 @@ fun SettingsRoute(nav: NavController, modifier: Modifier = Modifier) {
         }
     }
 
-    val onGotoDeveloper = {
-        nav.navigate("developer")
+    val onTestNotification = { delay: Long ->
+        NotificationWorker.scheduleTestNotification(context, delay)
     }
 
     if (NotificationOffset.isEnabled(context)) {
@@ -113,7 +117,7 @@ fun SettingsRoute(nav: NavController, modifier: Modifier = Modifier) {
         onMethodChange,
         offset,
         onOffsetChange,
-        onGotoDeveloper,
+        onTestNotification,
         modifier
     )
 }
@@ -126,25 +130,46 @@ fun SettingsRouteView(
     onMethodChange: (PrayerTimeMethod) -> Unit,
     offset: NotificationOffset,
     onOffsetChange: (NotificationOffset) -> Unit,
-    onGotoDeveloper: () -> Unit,
+    onTestNotification: (Long) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    Box(
+    Column(
         modifier = modifier
-            .fillMaxSize()
-            .verticalScroll(rememberScrollState()),
-        contentAlignment = Alignment.Center
+            .fillMaxWidth()
+            .padding(32.dp)
+            .verticalScroll(rememberScrollState())
     ) {
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
+        SettingsSectionWithTitle(
+            titleText = stringResource(R.string.route_settings_section_methodology),
+            descriptionText = stringResource(R.string.route_settings_section_methodology_details),
         ) {
             SelectCityDropdown(city, onCityChange)
-            if (HANAFI_ENABLED) {
-                SelectMethodDropdown(method, onMethodChange)
+            SelectMethodDropdown(method, onMethodChange)
+
+            if (method.getDescription(LocalContext.current) != null) {
+                Text(
+                    text = method.getDescription(LocalContext.current)!!,
+                    fontSize = 11.sp,
+                    fontStyle = FontStyle.Italic,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
             }
+        }
+
+        SettingsSectionWithTitle(
+            titleText = stringResource(R.string.route_settings_section_notifications),
+            descriptionText = stringResource(R.string.route_settings_section_notifications_details),
+        ) {
             SelectOffsetDropdown(offset, onOffsetChange)
-            Spacer(Modifier.height(60.dp))
-            GotoDeveloperButton(onGotoDeveloper)
+        }
+
+        SettingsSectionWithTitle(
+            titleText = stringResource(R.string.route_settings_section_development),
+            descriptionText = stringResource(R.string.route_settings_section_development_details),
+        ) {
+            if (DEBUG_ENABLED) {
+                TestNotificationButton(onTestNotification)
+            }
         }
     }
 }
@@ -158,7 +183,7 @@ fun SettingsRoutePreview() {
     val onCityChange: (PrayerTimeCity) -> Unit = {}
     val onMethodChange: (PrayerTimeMethod) -> Unit = {}
     val onOffsetChange: (NotificationOffset) -> Unit = {}
-    val onGotoDeveloper: () -> Unit = {}
+    val onTestNotification: (Long) -> Unit = {}
 
     PrayersTheme {
         Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
@@ -169,7 +194,7 @@ fun SettingsRoutePreview() {
                 onMethodChange,
                 offset,
                 onOffsetChange,
-                onGotoDeveloper,
+                onTestNotification,
                 modifier = Modifier.padding(innerPadding)
             )
         }

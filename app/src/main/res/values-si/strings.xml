@@ -10,6 +10,13 @@
     <string name="route_settings_method">ක්රමවේදය</string>
     <string name="route_settings_notifications">දැනුම්දීම්</string>
     <string name="route_settings_notifications_off">අක්රියයි</string>
+    <string name="route_settings_test_notification">දැනුම්දීම අත්හදා බලන්න</string>
+    <string name="route_settings_section_methodology">ක්රමවේදය</string>
+    <string name="route_settings_section_methodology_details">යෙදුමේ ප්‍රාර්ථනා වේලා පහත සැකසුම් අනුව ගණනය කර පිළිගැන්වෙයි.</string>
+    <string name="route_settings_section_notifications">දැනුම්දීම</string>
+    <string name="route_settings_section_notifications_details">ප්‍රාර්ථනා දැන්වීම් සක්‍රීය හෝ අක්‍රිය කරන්න සහ ප්‍රාර්ථනා වේලාවට පෙර දැන්වීම් ලබා ගැනීමට ඔබට අවශ්‍ය ප්‍රමාදය සකසන්න.</string>
+    <string name="route_settings_section_development">දෝෂහරණ</string>
+    <string name="route_settings_section_development_details">මෙම යෙදුම MIT බලපත්‍රය යටතේ විවෘත මූලාශ්‍ර සහ නිදහස්ව භාවිතා කළ හැකි එකකි, සහයෝගය ලබා දීමට හෝ අදහස් හුවමාරු කර යෙදුම වැඩි දියුණු කිරීමට ඔබව ආරාධනා කරයි. මූලාශ්‍ර කේතය පිළිබඳ විමසා බලන්න හෝ දායකවීමට මෙතනින් පිවිසෙන්න: https://github.com/thani-sh/prayer-time-lk-app.</string>
     <string name="prayers_type_fajr">ෆජ්ර්</string>
     <string name="prayers_type_shuruk">හිරුඋදාව</string>
     <string name="prayers_type_dhohr">ලුහර්</string>
@@ -21,8 +28,6 @@
     <string name="notification_offset_template">මිනිත්තු %dකට පෙර</string>
     <string name="notification_offset_disabled">දන්වන්න එපා</string>
     <string name="route_home_title">යාඥා වේලාවන්</string>
-    <string name="route_developer_name">දෝෂහරණ</string>
-    <string name="route_developer_test_notification">දැනුම්දීම අත්හදා බලන්න</string>
     <string name="next_prayer_widget_name">මීළඟ යාඥා</string>
     <string name="next_prayer_widget_title">මීළඟ යාඥා වේලාව</string>
     <string name="next_prayer_widget_refresh">නැවුම් කරන්න</string>

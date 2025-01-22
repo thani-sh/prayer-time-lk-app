@@ -7,7 +7,10 @@ import me.thanish.prayers.R
 /**
  * PrayerTimeMethod is the calculation method for prayer times.
  */
-enum class PrayerTimeMethod(private val key: Int) {
+enum class PrayerTimeMethod(
+    private val labelKey: Int,
+    private val descriptionKey: Int? = null
+) {
     shafi(R.string.prayers_method_shafi),
     hanafi(R.string.prayers_method_hanafi);
 
@@ -15,7 +18,17 @@ enum class PrayerTimeMethod(private val key: Int) {
      * getLabel returns the name of the prayer method with i18n.
      */
     fun getLabel(context: Context): String {
-        return context.getString(key)
+        return context.getString(labelKey)
+    }
+
+    /**
+     * getDescription returns the description of the prayer method with i18n.
+     */
+    fun getDescription(context: Context): String? {
+        if (descriptionKey == null) {
+            return null
+        }
+        return context.getString(descriptionKey)
     }
 
     /**

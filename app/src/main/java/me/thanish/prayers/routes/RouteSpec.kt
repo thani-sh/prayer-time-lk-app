@@ -6,7 +6,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.navigation.NavController
 import me.thanish.prayers.routes.compass.CompassRouteSpec
-import me.thanish.prayers.routes.developer.DeveloperRouteSpec
 import me.thanish.prayers.routes.home.MainRouteSpec
 import me.thanish.prayers.routes.settings.SettingsRouteSpec
 
@@ -39,7 +38,7 @@ data class RouteSpec(
 /**
  * A list of all the routes in the app.
  */
-val routes = listOf(MainRouteSpec, CompassRouteSpec, SettingsRouteSpec, DeveloperRouteSpec)
+val routes = listOf(MainRouteSpec, CompassRouteSpec, SettingsRouteSpec)
 
 /**
  * The default route to use when navigating.
