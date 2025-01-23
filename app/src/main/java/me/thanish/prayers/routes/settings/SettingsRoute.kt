@@ -5,8 +5,10 @@ import android.Manifest.permission.SCHEDULE_EXACT_ALARM
 import android.Manifest.permission.USE_EXACT_ALARM
 import android.os.Build
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -37,6 +39,7 @@ import me.thanish.prayers.domain.PrayerTimeCity
 import me.thanish.prayers.domain.PrayerTimeMethod
 import me.thanish.prayers.routes.RouteSpec
 import me.thanish.prayers.routes.RouteType
+import me.thanish.prayers.routes.settings.components.FeedbackIconButtons
 import me.thanish.prayers.routes.settings.components.SelectCityDropdown
 import me.thanish.prayers.routes.settings.components.SelectMethodDropdown
 import me.thanish.prayers.routes.settings.components.SelectOffsetDropdown
@@ -167,7 +170,9 @@ fun SettingsRouteView(
             titleText = stringResource(R.string.route_settings_section_development),
             descriptionText = stringResource(R.string.route_settings_section_development_details),
         ) {
+            FeedbackIconButtons()
             if (DEBUG_ENABLED) {
+                Spacer(Modifier.height(32.dp))
                 TestNotificationButton(onTestNotification)
             }
         }

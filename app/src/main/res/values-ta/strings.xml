@@ -16,7 +16,9 @@
     <string name="route_settings_section_notifications">அறிவிப்புகள்</string>
     <string name="route_settings_section_notifications_details">ஜமாஅத் அறிவிப்புகளை இயக்க அல்லது முடக்கவும், மற்றும் ஜமாஅத் நேரத்திற்கு முன் அறிவிப்புகளை பெற எவ்வளவு தாமதம் வேண்டும் என்பதை அமைக்கவும்.</string>
     <string name="route_settings_section_development">உருவாக்கம்</string>
-    <string name="route_settings_section_development_details">இந்த செயலி MIT உரிமத்தின் கீழ் திறந்த மூலமாகவும் இலவசமாகவும் பயன்படுத்த முடியும், அதை மேம்படுத்த உதவ அல்லது கருத்துகளை பகிர்வதற்கு அனைவரையும் அழைக்கிறது. மூலக் குறியீட்டை ஆராய அல்லது பங்களிக்க கீழேயுள்ள GitHub பக்கத்திற்குச் செல்லவும்: https://github.com/thani-sh/prayer-time-lk-app.</string>
+    <string name="route_settings_section_development_details">இந்த செயலி MIT உரிமத்தின் கீழ் திறந்த மூலமாகவும் இலவசமாகவும் பயன்படுத்த முடியும், அதை மேம்படுத்த உதவ அல்லது கருத்துகளை பகிர்வதற்கு அனைவரையும் அழைக்கிறது. மூலக் குறியீட்டை ஆராய அல்லது பங்களிக்க கீழேயுள்ள GitHub பக்கத்திற்குச் செல்லவும்.</string>
+    <string name="route_settings_open_github">GitHub தொகுப்பை திறக்கவும்</string>
+    <string name="route_settings_report_errors">கருத்துக்களை அறியப்படுத்தவும்</string>
     <string name="prayers_type_fajr">ஃபஜ்ர்</string>
     <string name="prayers_type_shuruk">உதயம்</string>
     <string name="prayers_type_dhohr">லுஹர்</string>

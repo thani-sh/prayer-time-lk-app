@@ -16,7 +16,9 @@
     <string name="route_settings_section_notifications">Notifications</string>
     <string name="route_settings_section_notifications_details">Turn prayer notifications on or off and customize how long before the prayer time you want to receive the notifications.</string>
     <string name="route_settings_section_development">Development</string>
-    <string name="route_settings_section_development_details">The app is open-source and free to use under the MIT license, inviting everyone to contribute or share feedback to help improve it. You can explore the source code or contribute via its GitHub page: https://github.com/thani-sh/prayer-time-lk-app.</string>
+    <string name="route_settings_section_development_details">The app is open-source and free to use under the MIT license, inviting everyone to contribute or share feedback to help improve it. You can explore the source code or contribute via its GitHub repository.</string>
+    <string name="route_settings_open_github">Open Github repository</string>
+    <string name="route_settings_report_errors">Report errors and feedback</string>
     <string name="prayers_type_fajr">Fajr</string>
     <string name="prayers_type_shuruk">Sunrise</string>
     <string name="prayers_type_dhohr">Dhuhr</string>

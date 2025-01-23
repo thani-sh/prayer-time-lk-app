@@ -16,7 +16,9 @@
     <string name="route_settings_section_notifications">දැනුම්දීම</string>
     <string name="route_settings_section_notifications_details">ප්‍රාර්ථනා දැන්වීම් සක්‍රීය හෝ අක්‍රිය කරන්න සහ ප්‍රාර්ථනා වේලාවට පෙර දැන්වීම් ලබා ගැනීමට ඔබට අවශ්‍ය ප්‍රමාදය සකසන්න.</string>
     <string name="route_settings_section_development">දෝෂහරණ</string>
-    <string name="route_settings_section_development_details">මෙම යෙදුම MIT බලපත්‍රය යටතේ විවෘත මූලාශ්‍ර සහ නිදහස්ව භාවිතා කළ හැකි එකකි, සහයෝගය ලබා දීමට හෝ අදහස් හුවමාරු කර යෙදුම වැඩි දියුණු කිරීමට ඔබව ආරාධනා කරයි. මූලාශ්‍ර කේතය පිළිබඳ විමසා බලන්න හෝ දායකවීමට මෙතනින් පිවිසෙන්න: https://github.com/thani-sh/prayer-time-lk-app.</string>
+    <string name="route_settings_section_development_details">මෙම යෙදුම MIT බලපත්‍රය යටතේ විවෘත මූලාශ්‍ර සහ නිදහස්ව භාවිතා කළ හැකි එකකි, සහයෝගය ලබා දීමට හෝ අදහස් හුවමාරු කර යෙදුම වැඩි දියුණු කිරීමට ඔබව ආරාධනා කරයි. මූලාශ්‍ර කේතය පිළිබඳ විමසා බලන්න හෝ දායකවීමට මෙතනින් පිවිසෙන්න.</string>
+    <string name="route_settings_open_github">GitHub සටහන් පොත විවෘත කරන්න</string>
+    <string name="route_settings_report_errors">දෝෂ සහ අදහස් වාර්තා කරන්න</string>
     <string name="prayers_type_fajr">ෆජ්ර්</string>
     <string name="prayers_type_shuruk">හිරුඋදාව</string>
     <string name="prayers_type_dhohr">ලුහර්</string>
