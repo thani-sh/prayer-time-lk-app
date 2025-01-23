@@ -1,0 +1,25 @@
+{
+  "name": "@thani-sh/prayer-time-lk",
+  "type": "module",
+  "version": "2.0.1",
+  "description": "Islamic prayer times for Sri Lanka as a JavaScript Module",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thani-sh/prayer-time-lk-lib.git"
+  },
+  "keywords": [],
+  "author": "Thanish Nizam <mnmtanish@gmail.com> (https://thanish.me/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thani-sh/prayer-time-lk-lib/issues"
+  },
+  "homepage": "https://github.com/thani-sh/prayer-time-lk-lib#readme",
+  "devDependencies": {
+    "@types/node": "^22.5.5"
+  }
+}
