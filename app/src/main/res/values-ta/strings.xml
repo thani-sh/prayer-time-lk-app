@@ -27,8 +27,8 @@
     <string name="prayers_type_isha">இஷா</string>
     <string name="prayers_method_shafi">ஷாஃபி</string>
     <string name="prayers_method_hanafi">ஹனஃபி</string>
-    <string name="notification_offset_template">%d நிமி. முன்</string>
-    <string name="notification_offset_disabled">அறிவிக்க வேண்டாம்</string>
+    <string name="notification_offset_template">%d நிமி.</string>
+    <string name="notification_offset_disabled">வேண்டாம்</string>
     <string name="route_home_title">தொழுகைகள்</string>
     <string name="next_prayer_widget_name">அடுத்த தொழுகை</string>
     <string name="next_prayer_widget_title">அடுத்த தொழுகை நேரம்</string>

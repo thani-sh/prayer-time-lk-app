@@ -27,8 +27,8 @@
     <string name="prayers_type_isha">Isha</string>
     <string name="prayers_method_shafi">Shafi</string>
     <string name="prayers_method_hanafi">Hanafi</string>
-    <string name="notification_offset_template">Before %d minutes</string>
-    <string name="notification_offset_disabled">Do not notify</string>
+    <string name="notification_offset_template">%d mins</string>
+    <string name="notification_offset_disabled">Disabled</string>
     <string name="route_home_title">Prayer Times</string>
     <string name="next_prayer_widget_name">Next Prayer</string>
     <string name="next_prayer_widget_title">Next prayer time</string>
