@@ -6,8 +6,8 @@
     <string name="route_compass_name">Compass</string>
     <string name="route_home_name">Timetable</string>
     <string name="route_settings_name">Settings</string>
-    <string name="route_settings_city">City/Location</string>
-    <string name="route_settings_method">Methodology</string>
+    <string name="route_settings_city">City</string>
+    <string name="route_settings_method">Method</string>
     <string name="route_settings_notifications">Before adhan</string>
     <string name="route_settings_notifications_off">Off</string>
     <string name="route_settings_test_notification">Test Notification</string>

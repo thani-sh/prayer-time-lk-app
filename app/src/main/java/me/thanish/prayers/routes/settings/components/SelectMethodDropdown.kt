@@ -46,12 +46,12 @@ fun SelectMethodDropdown(
                 text = stringResource(R.string.route_settings_method),
                 fontSize = 16.sp,
                 textAlign = TextAlign.Left,
-                modifier = Modifier.width(160.dp)
+                modifier = Modifier.weight(2f)
             )
             Spacer(modifier = Modifier.width(20.dp))
             TextButton(
                 onClick = { expanded = true }, modifier = Modifier
-                    .width(160.dp)
+                    .weight(3f)
                     .menuAnchor(type = MenuAnchorType.PrimaryNotEditable, enabled = true)
             ) {
                 Text(
