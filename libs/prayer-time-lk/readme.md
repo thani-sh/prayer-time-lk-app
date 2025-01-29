@@ -13,15 +13,14 @@ npm install @thani-sh/prayer-time-lk
 Use exported functions to get prayer times.
 
 ```js
-import { forDate, forToday } from "@thani-sh/prayer-time-lk";
+import { getPrayerTimes } from '@thani-sh/prayer-time-lk';
 
-const times = forToday();
+const times = await getPrayerTimes();
 // {
 //   fajr: { hour: 4, minute: 46 },
 //   sunrise: { hour: 6, minute: 2 },
 //   dhuhr: { hour: 24, minute: 8 },
 //   asr: { hour: 15, minute: 14 },
-//   asr_hanafi: { hour: 15, minute: 14 },
 //   maghrib: { hour: 18, minute: 13 },
 //   isha: { hour: 19, minute: 23}]
 // }
