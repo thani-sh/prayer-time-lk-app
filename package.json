@@ -5,8 +5,8 @@
   "private": true,
   "packageManager": "yarn@4.6.0",
   "workspaces": [
-    "apps/api",
-    "apps/web",
+    "apps/webapi",
+    "apps/website",
     "libs/prayer-time-lk"
   ],
   "engines": {
