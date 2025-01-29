@@ -1,0 +1,21 @@
+{
+	"name": "prayer-time-lk-api",
+	"main": "src/index.ts",
+	"compatibility_date": "2024-01-25",
+	"observability": {
+		"enabled": true
+	},
+	"r2_buckets": [
+		{
+			"binding": "BUCKET",
+			"bucket_name": "prayer-time-lk",
+			"preview_bucket_name": "prayer-time-lk"
+		}
+	],
+	"routes": [
+		{
+			"pattern": "api.prayertime.lk",
+			"custom_domain": true
+		}
+	]
+}
