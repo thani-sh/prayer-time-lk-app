@@ -4,6 +4,11 @@
     <string name="notification_channel_title">යාඥා කාලය</string>
     <string name="notification_channel_description">යාඥා කිරීමට වේලාව පැමිණි විට දැනුම් දෙයි</string>
     <string name="route_compass_name">මාලිමාව</string>
+    <string name="route_compass_north">උතුර</string>
+    <string name="route_compass_priority_high">නිරවද්‍යතාවය: ඉහළ</string>
+    <string name="route_compass_priority_medium">නිරවද්‍යතාවය: මධ්‍යම</string>
+    <string name="route_compass_priority_low">නිරවද්‍යතාවය: අඩු</string>
+    <string name="route_compass_priority_error">නිරවද්‍යතාවය: දෝෂය</string>
     <string name="route_home_name">කාලසටහන</string>
     <string name="route_settings_name">සැකසීම්</string>
     <string name="route_settings_city">නගරය</string>

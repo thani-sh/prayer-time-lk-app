@@ -14,7 +14,7 @@ import kotlin.math.PI
  * A composable that requests the current heading of the device.
  */
 @Composable
-fun CurrentHeading(onHeadingChanged: (Float) -> Unit) {
+fun CurrentHeading(onHeadingChanged: (Float, Int) -> Unit) {
     val context = LocalContext.current
 
     DisposableEffect(context) {
@@ -28,6 +28,7 @@ fun CurrentHeading(onHeadingChanged: (Float) -> Unit) {
         val sensorEventListener = object : SensorEventListener {
             private var gravity: FloatArray? = null
             private var magnetic: FloatArray? = null
+            private var priority = arrayOf(0, 0)
 
             override fun onSensorChanged(event: SensorEvent) {
                 if (event.sensor.type == Sensor.TYPE_ACCELEROMETER) {
@@ -39,15 +40,23 @@ fun CurrentHeading(onHeadingChanged: (Float) -> Unit) {
                 if (gravity == null || magnetic == null) {
                     return
                 }
-                val success =
-                    SensorManager.getRotationMatrix(rotation, null, gravity, magnetic)
-                if (success) {
+                if (SensorManager.getRotationMatrix(rotation, null, gravity, magnetic)) {
                     SensorManager.getOrientation(rotation, orientation)
-                    onHeadingChanged(2 * PI.toFloat() - normalizeAngle(orientation[0]))
+                    onHeadingChanged(
+                        2 * PI.toFloat() - normalizeAngle(orientation[0]),
+                        minOf(priority[0], priority[1])
+                    )
                 }
             }
 
-            override fun onAccuracyChanged(sensor: Sensor?, priority: Int) {}
+            override fun onAccuracyChanged(sensor: Sensor?, newPriority: Int) {
+                if (sensor?.type == Sensor.TYPE_ACCELEROMETER) {
+                    priority[0] = newPriority
+                }
+                if (sensor?.type == Sensor.TYPE_MAGNETIC_FIELD) {
+                    priority[1] = newPriority
+                }
+            }
         }
 
         sensorManager.registerListener(

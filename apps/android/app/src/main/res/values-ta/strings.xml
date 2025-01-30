@@ -4,6 +4,11 @@
     <string name="notification_channel_title">தொழுகை நேரம்</string>
     <string name="notification_channel_description">தொழுகை நேரம் வரும்போது அறிவிக்கும்</string>
     <string name="route_compass_name">திசைகாட்டி</string>
+    <string name="route_compass_north">வடக்கு</string>
+    <string name="route_compass_priority_high">துல்லியம்: உயர்</string>
+    <string name="route_compass_priority_medium">துல்லியம்: நடுத்தர</string>
+    <string name="route_compass_priority_low">துல்லியம்: குறைந்த</string>
+    <string name="route_compass_priority_error">துல்லியம்: பிழை</string>
     <string name="route_home_name">தொழுகைகள்</string>
     <string name="route_settings_name">அமைப்புகள்</string>
     <string name="route_settings_city">நகரம்</string>
