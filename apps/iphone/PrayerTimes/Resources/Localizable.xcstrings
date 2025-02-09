@@ -1,0 +1,985 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "|" : {
+      "shouldTranslate" : false
+    },
+    "hijri_calendar_offset_disabled" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disabled"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "අක්‍රීයයි"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "முடக்கப்பட்டது"
+          }
+        }
+      }
+    },
+    "hijri_calendar_offset_label" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hijri calendar offset"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "හිජ්රි දින දර්ශක අපගමනය"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ஹிஜ்ரி நாட்காட்டி ஈடுபாடு"
+          }
+        }
+      }
+    },
+    "hijri_calendar_offset_template %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%d days"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "දින %d"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%d நாட்கள்"
+          }
+        }
+      }
+    },
+    "notification_before_adhan_enabled" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notify before adhan"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "අසාන් කිරීමට පෙර දැනුම් දෙන්න"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "அதானுக்கு முன் அறிவிக்கவும்"
+          }
+        }
+      }
+    },
+    "notification_before_adhan_offset" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Minutes before adhan"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "අසාන් කිරීමට මිනිත්තු කිහිපයකට පෙර"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "அதானுக்கு முன் நிமிடங்கள்"
+          }
+        }
+      }
+    },
+    "notification_body %@ %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ prayer begins at %2$@"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ යාච්ඤාව %2$@ ට ආරම්භ වේ"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ தொழுகை %2$@ மணிக்கு தொடங்குகிறது"
+          }
+        }
+      }
+    },
+    "notification_offset_disabled" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disabled"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "එපා"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "வேண்டாம்"
+          }
+        }
+      }
+    },
+    "notification_offset_template %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%d mins"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "මිනි %d"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%d நிமி."
+          }
+        }
+      }
+    },
+    "notification_title %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "It's time for %@"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ යාඥාව සඳහා වේලාවයි"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ தொழுகைக்கான நேரம்"
+          }
+        }
+      }
+    },
+    "prayers_city_colombo" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colombo"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "කොළඹ"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "கொழும்பு"
+          }
+        }
+      }
+    },
+    "prayers_method_hanafi" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hanafi"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "හනෆි"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ஹனஃபி"
+          }
+        }
+      }
+    },
+    "prayers_method_shafi" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shafi"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ෂාෆි"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ஷாஃபி"
+          }
+        }
+      }
+    },
+    "prayers_time_until_hm %lld %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "in %dh, %dmins"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "පැය %dයි විනාඩි %dයි"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%d மணி, %d நிமிடங்கள்"
+          }
+        }
+      }
+    },
+    "prayers_time_until_m %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "in %dmins"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "විනාඩි %dයි"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%d நிமிடங்கள்"
+          }
+        }
+      }
+    },
+    "prayers_type_asr" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asr"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "අසර්"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "அஸ்ர்"
+          }
+        }
+      }
+    },
+    "prayers_type_dhohr" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dhuhr"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ලුහර්"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "லுஹர்"
+          }
+        }
+      }
+    },
+    "prayers_type_fajr" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fajr"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ෆජ්ර්"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ஃபஜ்ர்"
+          }
+        }
+      }
+    },
+    "prayers_type_isha" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Isha"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ඉෂා"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "இஷா"
+          }
+        }
+      }
+    },
+    "prayers_type_maghrib" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maghrib"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "මාග්රිබ්"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "மஃரிப்"
+          }
+        }
+      }
+    },
+    "prayers_type_shuruk" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sunrise"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "හිරුඋදාව"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "உதயம்"
+          }
+        }
+      }
+    },
+    "route_compass_name" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compass"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "මාලිමාව"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "திசைகாட்டி"
+          }
+        }
+      }
+    },
+    "route_compass_north" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "North"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "උතුර"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "வடக்கு"
+          }
+        }
+      }
+    },
+    "route_compass_priority_error" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Precision: Error"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "නිරවද්‍යතාවය: දෝෂය"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "துல்லியம்: பிழை"
+          }
+        }
+      }
+    },
+    "route_compass_priority_high" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Precision: High"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "නිරවද්‍යතාවය: ඉහළ"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "துல்லியம்: உயர்"
+          }
+        }
+      }
+    },
+    "route_compass_priority_low" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Precision: Low"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "නිරවද්‍යතාවය: අඩු"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "துல்லியம்: குறைந்த"
+          }
+        }
+      }
+    },
+    "route_compass_priority_medium" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Precision: Medium"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "නිරවද්‍යතාවය: මධ්‍යම"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "துல்லியம்: நடுத்தர"
+          }
+        }
+      }
+    },
+    "route_home_name" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Timetable"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "කාලසටහන"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "தொழுகைகள்"
+          }
+        }
+      }
+    },
+    "route_home_title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prayer Times"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "යාඥා වේලාවන්"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "தொழுகைகள்"
+          }
+        }
+      }
+    },
+    "route_settings_city" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "City"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "නගරය"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "நகரம்"
+          }
+        }
+      }
+    },
+    "route_settings_method" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Method"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ක්රමවේදය"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "முறை"
+          }
+        }
+      }
+    },
+    "route_settings_name" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "සැකසීම්"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "அமைப்புகள்"
+          }
+        }
+      }
+    },
+    "route_settings_open_github" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Source code on Github"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GitHub විවෘත කරන්න"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GitHub தொகுப்பை திறக்கவும்"
+          }
+        }
+      }
+    },
+    "route_settings_open_privacy" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Read privacy policy"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "රහස්‍යතා ප්‍රතිපත්තිය කියවන්න"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "தனியுரிமைக் கொள்கையைப் படியுங்கள்"
+          }
+        }
+      }
+    },
+    "route_settings_open_website" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://prayertime.lk"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://prayertime.lk"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://prayertime.lk"
+          }
+        }
+      }
+    },
+    "route_settings_report_errors" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Report errors and feedback"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "දෝෂ සහ අදහස් වාර්තා කරන්න"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "கருத்துக்களை அறியப்படுத்தவும்"
+          }
+        }
+      }
+    },
+    "route_settings_section_adjustments" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corrections"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "නිවැරදි කිරීම්"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "திருத்தங்கள்"
+          }
+        }
+      }
+    },
+    "route_settings_section_adjustments_details" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use these settings to correct values shown on the app when necessary (eg: Hijri calendar)"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "අවශ්‍ය විටෙක යෙදුමේ පෙන්වා ඇති අගයන් නිවැරදි කිරීමට මෙම සැකසුම් භාවිතා කරන්න (උදා: හිජ්රි දින දර්ශනය)"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "தேவைப்படும்போது பயன்பாட்டில் காட்டப்படும் மதிப்புகளைச் சரிசெய்ய இந்த அமைப்புகளைப் பயன்படுத்தவும் (எ.கா: ஹிஜ்ரி நாட்காட்டி)"
+          }
+        }
+      }
+    },
+    "route_settings_section_development" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Development"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "දෝෂහරණ"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "உருவாக்கம்"
+          }
+        }
+      }
+    },
+    "route_settings_section_development_details" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The app is open-source and free to use under the MIT license, inviting everyone to contribute or share feedback to help improve it. You can explore the source code or contribute via its GitHub repository."
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "මෙම යෙදුම MIT බලපත්‍රය යටතේ විවෘත මූලාශ්‍ර සහ නිදහස්ව භාවිතා කළ හැකි එකකි, සහයෝගය ලබා දීමට හෝ අදහස් හුවමාරු කර යෙදුම වැඩි දියුණු කිරීමට ඔබව ආරාධනා කරයි. මූලාශ්‍ර කේතය පිළිබඳ විමසා බලන්න හෝ දායකවීමට මෙතනින් පිවිසෙන්න."
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "இந்த செயலி MIT உரிமத்தின் கீழ் திறந்த மூலமாகவும் இலவசமாகவும் பயன்படுத்த முடியும், அதை மேம்படுத்த உதவ அல்லது கருத்துகளை பகிர்வதற்கு அனைவரையும் அழைக்கிறது. மூலக் குறியீட்டை ஆராய அல்லது பங்களிக்க கீழேயுள்ள GitHub பக்கத்திற்குச் செல்லவும்."
+          }
+        }
+      }
+    },
+    "route_settings_section_methodology" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prayer Times"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ක්රමවේදය"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "முறை"
+          }
+        }
+      }
+    },
+    "route_settings_section_methodology_details" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This app provides accurate Islamic prayer times from local sources."
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "යෙදුමේ ප්‍රාර්ථනා වේලා පහත සැකසුම් අනුව ගණනය කර පිළිගැන්වෙයි."
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "செயலியில் காட்டப்படும் ஜமாஅத் நேரங்கள் இந்த அமைப்புகளை அடிப்படையாகக் கொண்டு கணக்கிடப்பட்டுள்ளன."
+          }
+        }
+      }
+    },
+    "route_settings_section_notifications" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notifications"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "දැනුම්දීම"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "அறிவிப்புகள்"
+          }
+        }
+      }
+    },
+    "route_settings_section_notifications_details" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turn prayer notifications on or off and customize how long before the prayer time you want to receive the notifications."
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ප්‍රාර්ථනා දැන්වීම් සක්‍රීය හෝ අක්‍රිය කරන්න සහ ප්‍රාර්ථනා වේලාවට පෙර දැන්වීම් ලබා ගැනීමට ඔබට අවශ්‍ය ප්‍රමාදය සකසන්න."
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ஜமாஅத் அறிவிப்புகளை இயக்க அல்லது முடக்கவும், மற்றும் ஜமாஅத் நேரத்திற்கு முன் அறிவிப்புகளை பெற எவ்வளவு தாமதம் வேண்டும் என்பதை அமைக்கவும்."
+          }
+        }
+      }
+    },
+    "shared_coming_soon" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coming soon!"
+          }
+        },
+        "si" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ඉක්මනින් පැමිණේ!"
+          }
+        },
+        "ta" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "விரைவில்!"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
