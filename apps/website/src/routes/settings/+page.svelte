@@ -1,9 +1,11 @@
 <script lang="ts">
 	import { CITIES, METHODS, type City, type Method } from '@thani-sh/prayer-time-lk';
 	import capitalize from 'lodash/capitalize';
+	import { CodeIcon, MailIcon, CookieIcon } from 'lucide-svelte';
 	import { city } from '$lib/domain/PrayerTimeCity';
 	import { method } from '../../lib/domain/PrayerTimeMethod';
-	import { CodeIcon, MailIcon, CookieIcon } from 'lucide-svelte';
+	import iphoneBadge from './iphone-badge.png';
+	import androidBadge from './android-badge.png';
 </script>
 
 {#snippet Dropdown(
@@ -25,7 +27,7 @@
 	</fieldset>
 {/snippet}
 
-<div class="flex flex-col w-full max-w-md mx-auto px-4 py-4 mb-20">
+<div class="flex flex-col w-full max-w-md mx-auto px-4 py-4 mb-32">
 	<section>
 		<h1 class="text-3xl font-light mb-2">Preferences</h1>
 		<div class="card bg-black/10 shadow-sm p-4">
@@ -68,6 +70,26 @@
 				<CookieIcon class="w-4 h-4 mr-2" />
 				Open the privacy policy
 			</a>
+		</div>
+	</section>
+
+	<section class="mt-8">
+		<h1 class="text-3xl font-light mb-2">Download the app</h1>
+		<div class="card bg-black/10 shadow-sm p-4">
+			<p class="text-sm">
+				Install the app on your phone for quick access to prayer times and notifications.
+			</p>
+
+			<div class="flex flex-col sm:flex-row items-center justify-center mt-4 gap-4 grayscale">
+				<a href="https://apps.apple.com/lk/app/sri-lankan-prayer-times/id6741732392">
+					<img src={iphoneBadge} alt="Download on the App Store" />
+				</a>
+				<a href="https://play.google.com/store/apps/details?id=me.thanish.prayers">
+					<img src={androidBadge} alt="Download on Google Play" />
+				</a>
+			</div>
+
+			<p class="text-sm mt-4">Remember to rate the app after trying it!</p>
 		</div>
 	</section>
 </div>
