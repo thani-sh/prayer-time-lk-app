@@ -23,6 +23,7 @@ import androidx.glance.unit.ColorProvider
 import me.thanish.prayers.R
 import me.thanish.prayers.domain.PrayerTime
 import me.thanish.prayers.domain.PrayerTimeCity
+import me.thanish.prayers.domain.PrayerTimeMethod
 import me.thanish.prayers.domain.PrayerTimeTable
 
 @Composable
@@ -83,7 +84,7 @@ fun WidgetContent(prayerTime: PrayerTime) {
 @OptIn(ExperimentalGlancePreviewApi::class)
 @Preview(widthDp = 80, heightDp = 100)
 fun WidgetContentAsrPreview() {
-    val times = PrayerTimeTable.forToday(LocalContext.current, PrayerTimeCity.colombo)
+    val times = PrayerTimeTable.forToday(LocalContext.current, PrayerTimeMethod.shafi, PrayerTimeCity.colombo)
 
     GlanceTheme(GlanceTheme.colors) {
         WidgetContent(times.asr)
@@ -94,7 +95,7 @@ fun WidgetContentAsrPreview() {
 @OptIn(ExperimentalGlancePreviewApi::class)
 @Preview(widthDp = 80, heightDp = 100)
 fun WidgetContentMaghribPreview() {
-    val times = PrayerTimeTable.forToday(LocalContext.current, PrayerTimeCity.colombo)
+    val times = PrayerTimeTable.forToday(LocalContext.current, PrayerTimeMethod.shafi, PrayerTimeCity.colombo)
 
     GlanceTheme(GlanceTheme.colors) {
         WidgetContent(times.maghrib)

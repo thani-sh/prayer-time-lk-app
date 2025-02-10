@@ -71,7 +71,7 @@ fun SettingsRoute(nav: NavController, modifier: Modifier = Modifier) {
         city = selectedCity
         PrayerTimeCity.set(context, selectedCity)
         if (NotificationOffset.isEnabled(context)) {
-            SchedulerWorker.schedule(nav.context, city)
+            SchedulerWorker.schedule(nav.context, method, city)
         }
     }
 
@@ -79,7 +79,7 @@ fun SettingsRoute(nav: NavController, modifier: Modifier = Modifier) {
         method = selectedMethod
         PrayerTimeMethod.set(context, selectedMethod)
         if (NotificationOffset.isEnabled(context)) {
-            SchedulerWorker.schedule(nav.context, city)
+            SchedulerWorker.schedule(nav.context, method, city)
         }
     }
 
@@ -87,7 +87,7 @@ fun SettingsRoute(nav: NavController, modifier: Modifier = Modifier) {
         offset = selectedOffset
         NotificationOffset.set(context, selectedOffset)
         if (NotificationOffset.isEnabled(context)) {
-            SchedulerWorker.schedule(nav.context, city)
+            SchedulerWorker.schedule(nav.context, method, city)
         }
     }
 
