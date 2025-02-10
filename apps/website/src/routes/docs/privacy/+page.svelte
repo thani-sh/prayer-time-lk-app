@@ -3,9 +3,9 @@
 		<h2>Privacy Policy</h2>
 		<h3>1. Introduction</h3>
 		<p>
-			This Privacy Policy explains how we handle information in relation to the website Bönetider.nu
-			(the "Service"), operated from Sri Lanka and in compliance with the General Data Protection
-			Regulation (GDPR) and Swedish data protection laws.
+			This Privacy Policy explains how we handle information in relation to the website
+			Prayertime.lk (the "Service"), operated from Sweden and in compliance with the General Data
+			Protection Regulation (GDPR) and Swedish data protection laws.
 		</p>
 
 		<h3>2. Data Collection</h3>
@@ -61,7 +61,7 @@
 		<h3>7. Contact Us</h3>
 		<p>
 			For questions about this privacy policy or data practices: <a
-				href="mailto:contact@bönetider.nu">contact@bönetider.nu</a
+				href="mailto:contact@prayertime.lk">contact@prayertime.lk</a
 			>
 		</p>
 
