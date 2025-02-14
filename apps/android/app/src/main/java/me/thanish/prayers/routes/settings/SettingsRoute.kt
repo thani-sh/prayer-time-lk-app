@@ -34,15 +34,18 @@ import androidx.navigation.NavController
 import me.thanish.prayers.R
 import me.thanish.prayers.device.DEBUG_ENABLED
 import me.thanish.prayers.device.RequestPermission
+import me.thanish.prayers.domain.HijriCalendarOffset
 import me.thanish.prayers.domain.NotificationOffset
 import me.thanish.prayers.domain.PrayerTimeCity
 import me.thanish.prayers.domain.PrayerTimeMethod
 import me.thanish.prayers.routes.RouteSpec
 import me.thanish.prayers.routes.RouteType
 import me.thanish.prayers.routes.settings.components.FeedbackIconButtons
+import me.thanish.prayers.routes.settings.components.HijriCalendarOffsetSlider
 import me.thanish.prayers.routes.settings.components.SelectCityDropdown
 import me.thanish.prayers.routes.settings.components.SelectMethodDropdown
-import me.thanish.prayers.routes.settings.components.SelectOffsetDropdown
+import me.thanish.prayers.routes.settings.components.SelectOffsetSlider
+import me.thanish.prayers.routes.settings.components.SelectOffsetToggle
 import me.thanish.prayers.routes.settings.components.SettingsSectionWithTitle
 import me.thanish.prayers.routes.settings.components.TestNotificationButton
 import me.thanish.prayers.theme.PrayersTheme
@@ -66,6 +69,7 @@ fun SettingsRoute(nav: NavController, modifier: Modifier = Modifier) {
     var city by remember { mutableStateOf(PrayerTimeCity.get(context)) }
     var method by remember { mutableStateOf(PrayerTimeMethod.get(context)) }
     var offset by remember { mutableStateOf(NotificationOffset.get(context)) }
+    var hijriOffset by remember { mutableStateOf(HijriCalendarOffset.get(context)) }
 
     val onCityChange = { selectedCity: PrayerTimeCity ->
         city = selectedCity
@@ -89,6 +93,11 @@ fun SettingsRoute(nav: NavController, modifier: Modifier = Modifier) {
         if (NotificationOffset.isEnabled(context)) {
             SchedulerWorker.schedule(nav.context, method, city)
         }
+    }
+
+    val onHijriOffsetChange = { selectedOffset: HijriCalendarOffset ->
+        hijriOffset = selectedOffset
+        HijriCalendarOffset.set(context, selectedOffset)
     }
 
     val onTestNotification = { delay: Long ->
@@ -120,6 +129,8 @@ fun SettingsRoute(nav: NavController, modifier: Modifier = Modifier) {
         onMethodChange,
         offset,
         onOffsetChange,
+        hijriOffset,
+        onHijriOffsetChange,
         onTestNotification,
         modifier
     )
@@ -133,6 +144,8 @@ fun SettingsRouteView(
     onMethodChange: (PrayerTimeMethod) -> Unit,
     offset: NotificationOffset,
     onOffsetChange: (NotificationOffset) -> Unit,
+    hijriOffset: HijriCalendarOffset,
+    onHijriOffsetChange: (HijriCalendarOffset) -> Unit,
     onTestNotification: (Long) -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -163,7 +176,15 @@ fun SettingsRouteView(
             titleText = stringResource(R.string.route_settings_section_notifications),
             descriptionText = stringResource(R.string.route_settings_section_notifications_details),
         ) {
-            SelectOffsetDropdown(offset, onOffsetChange)
+            SelectOffsetToggle(offset, onOffsetChange)
+            SelectOffsetSlider(offset, onOffsetChange)
+        }
+
+        SettingsSectionWithTitle(
+            titleText = stringResource(R.string.route_settings_section_corrections),
+            descriptionText = stringResource(R.string.route_settings_section_corrections_details),
+        ) {
+            HijriCalendarOffsetSlider(hijriOffset, onHijriOffsetChange)
         }
 
         SettingsSectionWithTitle(
@@ -185,9 +206,11 @@ fun SettingsRoutePreview() {
     val city = PrayerTimeCity.colombo
     val method = PrayerTimeMethod.shafi
     val offset = NotificationOffset(10)
+    val hijriOffset = HijriCalendarOffset(0)
     val onCityChange: (PrayerTimeCity) -> Unit = {}
     val onMethodChange: (PrayerTimeMethod) -> Unit = {}
     val onOffsetChange: (NotificationOffset) -> Unit = {}
+    val onHijriOffsetChange: (HijriCalendarOffset) -> Unit = {}
     val onTestNotification: (Long) -> Unit = {}
 
     PrayersTheme {
@@ -199,6 +222,8 @@ fun SettingsRoutePreview() {
                 onMethodChange,
                 offset,
                 onOffsetChange,
+                hijriOffset,
+                onHijriOffsetChange,
                 onTestNotification,
                 modifier = Modifier.padding(innerPadding)
             )
